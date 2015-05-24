@@ -59,7 +59,7 @@
 .box.box--orange
   .row
     .column.small-12
-      %h5 Venue
+      %br
 
   .row-fluid.overflow
     %ul.small-block-grid-3
@@ -82,7 +82,7 @@
           <script type="text/javascript">
           (function(){
           function wpgmappity_maps_loaded() {
-          var latlng = new google.maps.LatLng(51.456370, -2.606592);
+          var latlng = new google.maps.LatLng(55.948849,-3.2081126);
           var options = {
            center : latlng,
            mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -98,7 +98,7 @@
            panControl : false, zoom : 14
           };
           var wpgmappitymap = new google.maps.Map(document.getElementById('wpgmappitymap'), options);
-          var point0 = new google.maps.LatLng(51.4606887,-2.6247733000000153);
+          var point0 = new google.maps.LatLng(55.948849,-3.2081126);
           var marker0= new google.maps.Marker({
            icon : 'http://labio-wedding.s3.amazonaws.com/assets/church7.png',
            position : point0,
@@ -107,10 +107,10 @@
           google.maps.event.addListener(marker0,'click',
            function() {
            var infowindow = new google.maps.InfoWindow(
-           {content: '<h3 class="font-book-antiqua">The Mansion House</h3>'});
+           {content: '<h3 class="font-book-antiqua">The Ghullie Dhu</h3><a target=\"_blank\" href=\"http://www.ghillie-dhu.co.uk/\">Go to website</a>'});
            infowindow.open(wpgmappitymap,marker0);
            });
-          var point1 = new google.maps.LatLng(51.4527825,-2.62524099999996);
+          var point1 = new google.maps.LatLng(55.9457656,-3.2423226);
           var marker1= new google.maps.Marker({
            icon : 'http://labio-wedding.s3.amazonaws.com/assets/hotel39.png',
            position : point1,
@@ -119,10 +119,10 @@
           google.maps.event.addListener(marker1,'click',
            function() {
            var infowindow = new google.maps.InfoWindow(
-           {content: '<h3 class="font-book-antiqua">The Bristol Hotel</h3><a target=\"_blank\" href=\"http://www.doylecollection.com/hotels/the-bristol-hotel\">Go to website</a>'});
+           {content: '<h3 class="font-book-antiqua">The Murrayfield Hotel</h3><a target=\"_blank\" href=\"http://www.themurrayfieldhotel.com/\">Go to website</a>'});
            infowindow.open(wpgmappitymap,marker1);
            });
-          var point2 = new google.maps.LatLng(51.4488666,-2.587721999999985);
+          var point2 = new google.maps.LatLng(55.946081,-3.218328);
           var marker2= new google.maps.Marker({
            icon : 'http://labio-wedding.s3.amazonaws.com/assets/hotel39.png',
            position : point2,
@@ -131,10 +131,10 @@
           google.maps.event.addListener(marker2,'click',
            function() {
            var infowindow = new google.maps.InfoWindow(
-           {content: '<h3 class="font-book-antiqua">DoubleTree</h3><a target=\"_blank\" href=\"http://doubletree3.hilton.com/en/index.html\">Go to website</a>'});
+           {content: '<h3 class="font-book-antiqua">Tune Hotel Haymarket </h3><a target=\"_blank\" href=\"http://tunehotels.com/\">Go to website</a>'});
            infowindow.open(wpgmappitymap,marker2);
            });
-          var point3 = new google.maps.LatLng(51.4559676,-2.5847842000000583);
+          var point3 = new google.maps.LatLng(55.9509735,-3.2040625);
           var marker3= new google.maps.Marker({
            icon : 'http://labio-wedding.s3.amazonaws.com/assets/hotel39.png',
            position : point3,
@@ -143,32 +143,8 @@
           google.maps.event.addListener(marker3,'click',
            function() {
            var infowindow = new google.maps.InfoWindow(
-           {content: '<h3 class="font-book-antiqua">Bristol Marriott</h3><a target=\"_blank\" href=\"http://www.marriott.com/hotels/travel/brsdt-bristol-marriott-hotel-city-centre/\">Go to website</a>'});
+           {content: '<h3 class="font-book-antiqua">Premier Inn</h3><a target=\"_blank\" href=\"http://www.premierinn.com\">Go to website</a>'});
            infowindow.open(wpgmappitymap,marker3);
-           });
-          var point4 = new google.maps.LatLng(51.4522431,-2.59696770000005);
-          var marker4= new google.maps.Marker({
-           icon : 'http://labio-wedding.s3.amazonaws.com/assets/hotel39.png',
-           position : point4,
-           map : wpgmappitymap
-           });
-          google.maps.event.addListener(marker4,'click',
-           function() {
-           var infowindow = new google.maps.InfoWindow(
-           {content: '<h3 class="font-book-antiqua">Radisson Blu</h3><a target=\"_blank\" href=\"http://www.radissonblu.co.uk/hotel-bristol\">Go to website</a>'});
-           infowindow.open(wpgmappitymap,marker4);
-           });
-          var point5 = new google.maps.LatLng(51.4597989,-2.586416399999962);
-          var marker5= new google.maps.Marker({
-           icon : 'http://labio-wedding.s3.amazonaws.com/assets/hotel39.png',
-           position : point5,
-           map : wpgmappitymap
-           });
-          google.maps.event.addListener(marker5,'click',
-           function() {
-           var infowindow = new google.maps.InfoWindow(
-           {content: '<h3>Holiday Inn</h3><a target=\"_blank\" href=\"http://www.ihg.com/holidayinn/hotels/gb/en/bristol/brscc/hoteldetail\">Go to website</a>'});
-           infowindow.open(wpgmappitymap,marker5);
            });
           }
           window.onload = function() {
@@ -187,21 +163,16 @@
         = raw(section.content.from_markdown_to_html)
 
 
-%br
-
-.row
-  .column.small-12.medium-8.medium-offset-2
-    %h5 Photos
-
-- if @event.show_photos?
-  = render partial: "photos/form"
-  = render partial: "photos/index"
-  #modalDropImages.reveal-modal{"data-reveal" => "", :style => "display: block;"}
-    %h2.text--orange Drop images to upload
-- else
-  .row
-    .column.small-12
-      %p We invite you back to this website after the wedding to view and upload photos
-
-%br
-
+//.row
+//  .column.small-12.medium-8.medium-offset-2
+//    %h5 Photos
+//
+//- if @event.show_photos?
+//  = render partial: "photos/form"
+//  = render partial: "photos/index"
+//  #modalDropImages.reveal-modal{"data-reveal" => "", :style => "display: block;"}
+//    %h2.text--orange Drop images to upload
+//- else
+//  .row
+//    .column.small-12
+//      %p We invite you back to this website after the wedding to view and upload photos
