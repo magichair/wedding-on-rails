@@ -25,52 +25,6 @@
 @import "core/variables";
 @import "core/helpers";
 
-@font-face {
-  font-family: "learning_curve_proregular";
-  src: asset-url("learningcurve_ot-webfont.eot");
-  src: asset-url("learningcurve_ot-webfont.eot?#iefix") format("embedded-opentype"),
-       asset-url("learningcurve_ot-webfont.woff2") format("woff2"),
-       asset-url("learningcurve_ot-webfont.woff") format("woff"),
-       asset-url("learningcurve_ot-webfont.ttf") format("truetype"),
-       asset-url("learningcurve_ot-webfont.svg#learning_curve_proregular") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'bebas_neueregular';
-  src: asset-url('BebasNeue-webfont.eot');
-  src: asset-url('BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
-       asset-url('BebasNeue-webfont.woff') format('woff'),
-       asset-url('BebasNeue-webfont.ttf') format('truetype'),
-       asset-url('BebasNeue-webfont.svg#bebas_neueregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'pacificoregular';
-  src: asset-url('pacifico-webfont.eot');
-  src: asset-url('pacifico-webfont.eot?#iefix') format('embedded-opentype'),
-       asset-url('pacifico-webfont.woff2') format('woff2'),
-       asset-url('pacifico-webfont.woff') format('woff'),
-       asset-url('pacifico-webfont.ttf') format('truetype'),
-       asset-url('pacifico-webfont.svg#pacificoregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'fontello';
-  src: asset-url('fontello.eot?45784083');
-  src: asset-url('fontello.eot?45784083#iefix') format('embedded-opentype'),
-       asset-url('fontello.woff?45784083') format('woff'),
-       asset-url('fontello.ttf?45784083') format('truetype'),
-       asset-url('fontello.svg?45784083#fontello') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
 .text--success {
   color: $green;
 }
@@ -155,16 +109,6 @@
 
 .caption {
   display: none !important;
-}
-
-@keyframes blood-cycle {
-  0% {background-position: 0 0; }
-  100% {background-position: 0 -6500px; } /* Must be full height of sprite or skipping will happen.*/
-}
-
-@-webkit-keyframes blood-cycle {
-  0% {background-position: 0 0; }
-  100% {background-position: 0 -6500px; } /* Must be full height of sprite or skipping will happen.*/
 }
 
 @-webkit-keyframes jump {

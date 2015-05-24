@@ -1,15 +1,21 @@
-default: &default
-  adapter: mysql2
-  encoding: utf8
+# Change database name, then run "rake db:create db:migrate"
+
+defaults: &defaults
+  encoding: utf-8
+  username: postgres
+  password: j0bb3hplop
   pool: 5
-  username: root
-  password:
-  socket: /tmp/mysql.sock
+  host: 127.0.0.1
+  reconnect: true
+  adapter: postgresql
 
 development:
-  <<: *default
-  database: hitched_development
+  <<: *defaults
+  database: wedding_dev
 
-test:
-  <<: *default
-  database: hitched_test
+test: &test
+  <<: *defaults
+  database: wedding_test
+
+cucumber:
+  <<: *test

@@ -10,17 +10,17 @@
 
 @import "layout/core";
 
-.box--mint {
-  background: $mint;
+.box--orange {
+  background: $orange;
 
   h1 {
-    text-shadow: 3px 3px 0 $salmon;
+    color: $white;
   }
 }
 
 .cb-checkbox.checked .cb-inner {
-  background-color: $salmon;
-  border-color: darken($salmon, 5%);
+  background-color: $orange;
+  border-color: darken($orange, 5%);
 }
 
 .cb-checkbox:hover .cb-inner {
@@ -28,72 +28,8 @@
 }
 
 .progress .meter {
-  background: $mint;
+  background: $stone;
   background: asset-url("themes/popcorn/stripes.png");
-}
-
-#ballons {
-  position: relative;
-}
-
-#balloon01 {
-  position: absolute;
-  width: 100%;
-  padding-bottom: 1% * floor(100 * (67.96/551.39));
-  background-image: asset-url("themes/popcorn/balloon_01.svg");
-  background-size: 100%;
-}
-
-#balloon02 {
-  position: absolute;
-  width: 100%;
-  padding-bottom: 1% * floor(100 * (67.96/551.39));
-  background-image: asset-url("themes/popcorn/balloon_02.svg");
-  background-size: 100%;
-}
-
-#balloon03 {
-  position: absolute;
-  width: 100%;
-  padding-bottom: 1% * floor(100 * (67.96/551.39));
-  background-image: asset-url("themes/popcorn/balloon_03.svg");
-  background-size: 100%;
-}
-
-#bridge {
-  overflow: hidden;
-  position: relative;
-  margin-top: 50px;
-  padding-bottom: 1% * floor(100 * (161.46/551.39));
-  background-image: asset-url("themes/popcorn/bridge.svg");
-  background-size: 100%;
-}
-
-#couple {
-  position: absolute;
-  right: 0; bottom: 0; left: 0;
-  height: 100%;
-  background-image: asset-url("themes/popcorn/couple.svg");
-  background-size: 100%;
-  &.animate {
-    animation: jump 1s 1 cubic-bezier(0.600, -0.280, 0.735, 0.045);;
-    -webkit-animation: jump 1s 1 cubic-bezier(0.600, -0.280, 0.735, 0.045);;
-  }
-}
-
-#blood {
-  background: asset-url("themes/popcorn/blood.png") 0 0 no-repeat;
-  width: 1000px;
-  height: 486px;
-
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  margin-left: -500px;
-
-  animation: blood-cycle 1s steps(13) 1;
-  -webkit-animation: blood-cycle 1s steps(13) 1;
-  display: none;
 }
 
 p {text-align: center;}

@@ -1,6 +1,6 @@
 = content_for :title, "Dashboard"
 
-%h1 Admin
+%h1 Brains and Packhorse
 
 %ul.small-block-grid-4
   %li
@@ -20,33 +20,23 @@
         Not RSVPd
   %li
     .panel.text-center
-      %h2= @groups.count
-      %p= "Groups".pluralize(@groups.count)
-  %li
-    .panel.text-center
-      %h2= "£12,345"
-      %p= "Estimated Cost"
-  %li
-    .panel.text-center
       %h2= @event.days_to_go
       %p= "#{"Days".pluralize(@event.days_to_go)} to go"
 
 %dl.tabs{"data-tab" => ""}
   %dd.active
-    %a{:href => "#settings"} Settings
-  %dd
-    %a{:href => "#content"} Content
-  %dd
-    %a{:href => "#todos"} To Do's
-  %dd
-    %a{:href => "#venue"} Venue
-  %dd
     %a{:href => "#guests"} Guests
+  %dd
+    %a{:href => "#settings"} Details
+  //%dd
+  //  %a{:href => "#content"} Content
+  %dd
+    %a{:href => "#venue"} Venue photographs
 .tabs-content
-  #settings.content.active
+  #settings.content
     - if @guests.empty?
       %p.alert
-        You havn't added any guests yet. Why not #{link_to "add some now", new_guest_path}?
+        You haven't added any guests yet. Why not #{link_to "add some now", new_guest_path}?
     - else
       = render partial: "events/form"
 
@@ -66,12 +56,10 @@
 
     = render partial: "admin/sections/form"
 
-  #todos.content
-    = render partial: "lists"
   #venue.content
     = render partial: "venue_photos/index"
     = render partial: "venue_photos/form"
-  #guests.content
+  #guests.content.active
     %table
       %thead
         %tr

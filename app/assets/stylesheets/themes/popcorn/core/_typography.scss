@@ -3,7 +3,7 @@ body {
 }
 
 h1 {
-  font-family: "bebas_neueregular", sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
   font-size: 10em;
 
   @media all and (max-width: $mobile) {
@@ -12,7 +12,7 @@ h1 {
 }
 
 h2 {
-  font-family: "learning_curve_proregular", sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
   font-size: 5.5em;
 
   @media all and (max-width: $mobile) {
@@ -21,7 +21,7 @@ h2 {
 }
 
 h3 {
-  font-family: "learning_curve_proregular", sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
   font-size: 4em;
 
   @media all and (max-width: $mobile) {
@@ -30,12 +30,12 @@ h3 {
 }
 
 h4 {
-  font-family: "learning_curve_proregular", sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
   font-size: 3em;
 }
 
 h5 {
-  font-family: "bebas_neueregular", sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
   font-size: 4em;
 
   @media all and (max-width: $mobile) {
@@ -44,12 +44,12 @@ h5 {
 }
 
 h6 {
-  font-family: "bebas_neueregular", sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
   font-size: 3em;
 }
 
 p {
-  font-family: "Book Antiqua", "Palatino", "Palatino Linotype", "Palatino LT STD", "Georgia", serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
   font-size: 1.2em;
 
   small {
@@ -72,17 +72,8 @@ p {
 }
 
 
-.font--pacifico {
-  position: relative;
-  font-family: "pacificoregular", sans-serif;
-  font-size: 1.2em;
-  margin: 0 -0.1em;
-  top: 0.12em;
-  line-height: 0;
-}
-
 label {
-  font-family: "bebas_neueregular", sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
   font-size: 2em;
   color: $white;
   [title="required"] { display: none; }
@@ -90,10 +81,6 @@ label {
 
 .text--left {
   text-align: left;
-}
-
-.text--salmon {
-  color: $salmon;
 }
 
 #venue-copy {
@@ -112,9 +99,4 @@ label {
   h3, h4 {
     color: $color-text;
   }
-}
-
-.font-book-antiqua {
-  font-family: "Book Antiqua", "Palatino", "Palatino Linotype", "Palatino LT STD", "Georgia", serif;
-  font-size: 16px;
 }

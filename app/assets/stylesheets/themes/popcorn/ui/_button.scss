@@ -2,18 +2,18 @@
   -webkit-appearance: none;
   outline: none;
   border-radius: 100px;
-  background-color: $salmon;
+  background-color: $orange;
 
   &:hover {
-    background-color: darken($salmon, 5%);
+    background-color: darken($orange, 5%);
   }
 }
 
 .button--light {
-  background: $white;
-  color: mix($mint, #333);
+  background: $black;
+  color: mix($stone, #333);
   &:hover {
     background-color: $white;
-    color: $salmon;
+    color: $orange;
   }
 }
