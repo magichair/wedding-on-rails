@@ -4,7 +4,7 @@ body {
 
 h1 {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
-  font-size: 10em;
+  font-size: 3em;
 
   @media all and (max-width: $mobile) {
     font-size: 3.5em;
@@ -89,7 +89,7 @@ label {
   background: rgba($white, 0.95);
   padding: $spacing*2;
   color: $color-text;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
 
   @media all and (max-width: 600px) {
     padding: $spacing;
