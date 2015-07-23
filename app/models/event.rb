@@ -7,7 +7,7 @@ class Event < ActiveRecord::Base
   end
 
   def formatted_time
-    date.strftime("#{date.day.ordinalize} %B %Y")
+    date.strftime("%d %B %Y")
   end
 
   def in_past?

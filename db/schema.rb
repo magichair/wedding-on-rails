@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150102105835) do
+ActiveRecord::Schema.define(version: 20150723112336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,16 +72,18 @@ ActiveRecord::Schema.define(version: 20150102105835) do
   create_table "guests", force: :cascade do |t|
     t.string   "name"
     t.boolean  "rsvp"
-    t.boolean  "invited_to_ceremony"
-    t.boolean  "invited_to_evening"
-    t.boolean  "vegetarian"
+    t.boolean  "invited_to_ceremony", default: false
+    t.boolean  "invited_to_evening",  default: false
+    t.boolean  "vegetarian",          default: false
     t.integer  "group_size"
-    t.boolean  "arrival_transportation_required"
-    t.boolean  "departing_transport_requred"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "group_id"
     t.integer  "event_id"
+    t.string   "allergies"
+    t.integer  "kids_menu_choice",    default: 0
+    t.string   "music"
+    t.boolean  "has_kids",            default: false
   end
 
   create_table "photos", force: :cascade do |t|

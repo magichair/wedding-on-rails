@@ -12,29 +12,23 @@
       %span.separator
       %p= @event.formatted_time
 
-.box--orange
-  #rsvp.row{ng: { controller: "RsvpController" }}
+.box--orange#rsvp
+  .row
     .column.small-12
-      = simple_form_for rsvp_event_groups_path(@event) do |f|
+      %h2 RSVP
+      = simple_form_for search_event_guests_path(@event) do |f|
         .row
           .column.small-12.column.medium-6.medium-offset-3
-            = f.input :guest, label: false, collection: @guests, as: :select, placeholder: "Select your name(s)"
+            = f.input :guest, label: false, placeholder: "To whom is your invite addressed?"
             = f.submit
 
 #location
   .row
-    .column.small-12
-      %p
-        = raw(@event.venue_body.from_markdown_to_html)
-      %p
-        = "The #{@event.venue_name} in #{@event.venue_address_city}"
-
-.row
-  .column.small-12
-    #venue-copy
-      %h4 How to get there
-      = raw(@event.venue_directions.from_markdown_to_html)
-      .map--overlay{onclick: "style.pointerEvents='none'"}
+    .column.small-6
+      %h3= "The #{@event.venue_name}, #{@event.venue_address_city}"
+      %p Ceremony 1:30pm, Reception: 7:30pm
+      %p The Ghullie Dhu, 2 Rutland Square, Edinburgh
+    .column.small-6
       :plain
         <div class="map wpgmappity_container" id="wpgmappitymap"></div>
 

@@ -1,6 +1,7 @@
 = simple_form_for [:admin, @event, @guest] do |f|
-  = f.input :name
+  = f.input :name, :label => "Name(s)", :placeholder => "i.e. Helen and Kyle"
   = f.input :invited_to_ceremony
   = f.input :invited_to_evening
   = f.input :vegetarian
+  %br
   = f.button :submit

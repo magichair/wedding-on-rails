@@ -6,27 +6,25 @@ Rails.application.routes.draw do
 
   resources :events, except: [:index] do
 
-    resources :groups do
-      resources :guests
+    resources :guests do
+      collection do
+        post 'search'
+      end
+      member do
+        post 'rsvp'
+      end
     end
-    resources :guests
-    resources :groups do
-      put 'rsvp', on: :collection
-      resources :guests
-    end
+
   end
 
   namespace :admin do
     resources :events, except: [:index] do
       resources :guests, except: [:show]
-      resources :groups
     end
     root "admin#dashboard"
   end
 
-
   match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
-
   root "events#show"
 
 end

@@ -14,12 +14,7 @@ var styles = [
 var options = {
  center : latlng,
  mapTypeId: google.maps.MapTypeId.ROADMAP,
- zoomControl : true,
- zoomControlOptions :
- {
- style: google.maps.ZoomControlStyle.SMALL,
- position: google.maps.ControlPosition.TOP_LEFT
- },
+ zoomControl : false,
  mapTypeControl : false,
  scaleControl : false,
  streetViewControl : false,
@@ -31,7 +26,7 @@ var options = {
 var wpgmappitymap = new google.maps.Map(document.getElementById('wpgmappitymap'), options);
 var point0 = new google.maps.LatLng(55.948849,-3.2081126);
 var marker0= new google.maps.Marker({
- icon : 'http://labio-wedding.s3.amazonaws.com/assets/church7.png',
+ icon : '/assets/venue.png',
  position : point0,
  map : wpgmappitymap
  });
@@ -43,7 +38,7 @@ google.maps.event.addListener(marker0,'click',
  });
 var point1 = new google.maps.LatLng(55.9457656,-3.2423226);
 var marker1= new google.maps.Marker({
- icon : 'http://labio-wedding.s3.amazonaws.com/assets/hotel39.png',
+ icon : '/assets/hotel.png',
  position : point1,
  map : wpgmappitymap
  });
@@ -55,7 +50,7 @@ google.maps.event.addListener(marker1,'click',
  });
 var point2 = new google.maps.LatLng(55.946081,-3.218328);
 var marker2= new google.maps.Marker({
- icon : 'http://labio-wedding.s3.amazonaws.com/assets/hotel39.png',
+ icon : '/assets/hotel.png',
  position : point2,
  map : wpgmappitymap
  });
@@ -67,7 +62,7 @@ google.maps.event.addListener(marker2,'click',
  });
 var point3 = new google.maps.LatLng(55.9509735,-3.2040625);
 var marker3= new google.maps.Marker({
- icon : 'http://labio-wedding.s3.amazonaws.com/assets/hotel39.png',
+ icon : '/assets/hotel.png',
  position : point3,
  map : wpgmappitymap
  });

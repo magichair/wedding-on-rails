@@ -11,10 +11,7 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery_ujs
-//= require lodash
 //= require foundation
-//= require turbolinks
 //= require map
 
 //= require_tree .
