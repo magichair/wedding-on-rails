@@ -12,124 +12,30 @@
       %span.separator
       %p= @event.formatted_time
 
-.box.box--orange
+#location
   .row
     .column.small-12
-      %br
-      = link_to raw("RSVP"), "#rsvp", class: "button large js-scroll-to"
-
-#location.inverted.paralax{ :style => "background-image: url('#{@primary_venue_photo}');" }
-  .row
-    .column.small-12
-      %br
-      %br
-      %br
-
       %p
         = raw(@event.venue_body.from_markdown_to_html)
       %p
         = "The #{@event.venue_name} in #{@event.venue_address_city}"
-
-      %br
-      %br
-
-%br
 
 .row
   .column.small-12
     #venue-copy
       %h4 How to get there
       = raw(@event.venue_directions.from_markdown_to_html)
-      %br
       .map--overlay{onclick: "style.pointerEvents='none'"}
       :plain
-        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
         <div class="map wpgmappity_container" id="wpgmappitymap"></div>
-        <script type="text/javascript">
-        (function(){
-        function wpgmappity_maps_loaded() {
-        var latlng = new google.maps.LatLng(55.948849,-3.2081126);
-        var options = {
-         center : latlng,
-         mapTypeId: google.maps.MapTypeId.ROADMAP,
-         zoomControl : true,
-         zoomControlOptions :
-         {
-         style: google.maps.ZoomControlStyle.SMALL,
-         position: google.maps.ControlPosition.TOP_LEFT
-         },
-         mapTypeControl : false,
-         scaleControl : false,
-         streetViewControl : false,
-         panControl : false, zoom : 14
-        };
-        var wpgmappitymap = new google.maps.Map(document.getElementById('wpgmappitymap'), options);
-        var point0 = new google.maps.LatLng(55.948849,-3.2081126);
-        var marker0= new google.maps.Marker({
-         icon : 'http://labio-wedding.s3.amazonaws.com/assets/church7.png',
-         position : point0,
-         map : wpgmappitymap
-         });
-        google.maps.event.addListener(marker0,'click',
-         function() {
-         var infowindow = new google.maps.InfoWindow(
-         {content: '<h3 class="font-book-antiqua">The Ghullie Dhu</h3><a target=\"_blank\" href=\"http://www.ghillie-dhu.co.uk/\">Go to website</a>'});
-         infowindow.open(wpgmappitymap,marker0);
-         });
-        var point1 = new google.maps.LatLng(55.9457656,-3.2423226);
-        var marker1= new google.maps.Marker({
-         icon : 'http://labio-wedding.s3.amazonaws.com/assets/hotel39.png',
-         position : point1,
-         map : wpgmappitymap
-         });
-        google.maps.event.addListener(marker1,'click',
-         function() {
-         var infowindow = new google.maps.InfoWindow(
-         {content: '<h3 class="font-book-antiqua">The Murrayfield Hotel</h3><a target=\"_blank\" href=\"http://www.themurrayfieldhotel.com/\">Go to website</a>'});
-         infowindow.open(wpgmappitymap,marker1);
-         });
-        var point2 = new google.maps.LatLng(55.946081,-3.218328);
-        var marker2= new google.maps.Marker({
-         icon : 'http://labio-wedding.s3.amazonaws.com/assets/hotel39.png',
-         position : point2,
-         map : wpgmappitymap
-         });
-        google.maps.event.addListener(marker2,'click',
-         function() {
-         var infowindow = new google.maps.InfoWindow(
-         {content: '<h3 class="font-book-antiqua">Tune Hotel Haymarket </h3><a target=\"_blank\" href=\"http://tunehotels.com/\">Go to website</a>'});
-         infowindow.open(wpgmappitymap,marker2);
-         });
-        var point3 = new google.maps.LatLng(55.9509735,-3.2040625);
-        var marker3= new google.maps.Marker({
-         icon : 'http://labio-wedding.s3.amazonaws.com/assets/hotel39.png',
-         position : point3,
-         map : wpgmappitymap
-         });
-        google.maps.event.addListener(marker3,'click',
-         function() {
-         var infowindow = new google.maps.InfoWindow(
-         {content: '<h3 class="font-book-antiqua">Premier Inn</h3><a target=\"_blank\" href=\"http://www.premierinn.com\">Go to website</a>'});
-         infowindow.open(wpgmappitymap,marker3);
-         });
-        }
-        window.onload = function() {
-         wpgmappity_maps_loaded();
-        };
-        })()
-        </script>
-
-%br
 
 .box--orange
-  %br
   #rsvp.row{ng: { controller: "RsvpController" }}
     .column.small-12
       = simple_form_for rsvp_event_groups_path(@event) do |f|
         .row
           .column.small-12.column.medium-6.medium-offset-3
             = f.input :guest, label: false, collection: @groups, as: :select, placeholder: "Select your name(s)"
-        %br
 
       .row
         .column.small-12.medium-6{ "ng-repeat" => "guest in group" }
@@ -146,11 +52,3 @@
               %label
                 %input{type: "checkbox", ng: {change: "toggleVegetarian(guest)", model: "guest.vegetarian"}}
                 Vegetarian
-
-
-- @event.sections.each do |section|
-  %section
-    .row
-      .column.small-12.medium-8.medium-offset-2
-        %h5= section.title
-        = raw(section.content.from_markdown_to_html)

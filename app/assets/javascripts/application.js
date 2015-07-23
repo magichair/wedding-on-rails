@@ -13,13 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require lodash
-//= require angular
-//= require restangular
 //= require foundation
 //= require turbolinks
-
-//= require_tree ./angular/modules
-//= require_tree ./angular/controllers
+//= require map
 
 //= require_tree .
 
