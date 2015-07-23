@@ -71,32 +71,9 @@ p {
   }
 }
 
-
 label {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
   font-size: 2em;
   color: $white;
   [title="required"] { display: none; }
-}
-
-.text--left {
-  text-align: left;
-}
-
-#venue-copy {
-  margin-top: -100px;
-  background: $white;
-  background: rgba($white, 0.95);
-  padding: $spacing*2;
-  color: $color-text;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-
-  @media all and (max-width: 600px) {
-    padding: $spacing;
-  }
-
-
-  h3, h4 {
-    color: $color-text;
-  }
 }
