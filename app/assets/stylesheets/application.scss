@@ -25,81 +25,8 @@
   color: $red;
 }
 
-#event--cover {
-  h2 {
-    margin: 0;
-    padding: 1em 0;
-    text-transform: uppercase;
-    font-size: 3em;
-    font-weight: bold;
-  }
-  span.separator {
-    width: 20%;
-    display: block;
-    border-bottom: 3px solid $orange;
-    margin: 0 auto;
-  }
-  p {
-    text-transform: uppercase;
-    font-size: 2em;
-    padding: 1em 0;
-  }
-}
-
-#location {
-  position: relative;
-  background-size: cover;
-  background-position: center top;
-  height: 600px;
-  p {
-    color: $white;
-  }
-  &:before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    background: rgba(0, 0, 0, 0.6);
-  }
-}
-
-.select2-container .select2-choice {
-  height: 40px;
-  .select2-arrow {
-    width: 30px;
-    padding: 5px;
-  }
-  > .select2-chosen {
-    line-height: 38px;
-  }
-}
-
 .theme--popcorn {
   @import "themes/popcorn/popcorn";
-}
-
-.js-justified__container {
-  margin: 0 10px;
-}
-
-.map {
-  width: 100%;
-  height: 360px;
-}
-
-.map--overlay {
-  background: transparent;
-  position: relative;
-  width: 100%;
-  height: 360px;
-  top: 360px;
-  margin-top: -360px;
-  z-index: 1;
-}
-
-
-.caption {
-  display: none !important;
 }
 
 @-webkit-keyframes jump {

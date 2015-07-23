@@ -12,6 +12,15 @@
       %span.separator
       %p= @event.formatted_time
 
+.box--orange
+  #rsvp.row{ng: { controller: "RsvpController" }}
+    .column.small-12
+      = simple_form_for rsvp_event_groups_path(@event) do |f|
+        .row
+          .column.small-12.column.medium-6.medium-offset-3
+            = f.input :guest, label: false, collection: @guests, as: :select, placeholder: "Select your name(s)"
+            = f.submit
+
 #location
   .row
     .column.small-12
@@ -29,26 +38,6 @@
       :plain
         <div class="map wpgmappity_container" id="wpgmappitymap"></div>
 
-.box--orange
-  #rsvp.row{ng: { controller: "RsvpController" }}
+%footer#site.box.box--orange
+  .row
     .column.small-12
-      = simple_form_for rsvp_event_groups_path(@event) do |f|
-        .row
-          .column.small-12.column.medium-6.medium-offset-3
-            = f.input :guest, label: false, collection: @groups, as: :select, placeholder: "Select your name(s)"
-
-      .row
-        .column.small-12.medium-6{ "ng-repeat" => "guest in group" }
-          .card
-            %h3 {{ guestName(guest) }}
-            %input{type: "text", placeholder: "enter guest name", ng: { show: "guest.is_guest", model: "newGuest.name" }}
-            %p {{ rsvpStatus(guest) }}
-            %span.button{ng: { show: "guest.rsvp == null && !guest.is_guest", click: "setRsvp(guest, false)"}} Sorry I can not attend
-            %span.button{ng: { hide: "guest.is_guest || guest.rsvp", click: "setRsvp(guest, true)"}} {{ rsvpButtonText(guest) }}
-            %span.button{ng: { show: "guest.rsvp", click: "setRsvp(guest, false)"}} Sorry I can no longer make it
-            %span.button{ng: { show: "guest.is_guest", disabled: "newGuest.name == ''", click: "defineGuest(guest)"}} {{ rsvpButtonText(guest) }}
-
-            .reset{ng: {show: "guest.rsvp && guest.invited_to_ceremony"}}
-              %label
-                %input{type: "checkbox", ng: {change: "toggleVegetarian(guest)", model: "guest.vegetarian"}}
-                Vegetarian
