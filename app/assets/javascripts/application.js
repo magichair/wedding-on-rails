@@ -17,15 +17,6 @@
 //= require restangular
 //= require foundation
 //= require turbolinks
-//= require datetimepicker
-//= require select2
-//= require checkBo
-//= require Justified-Gallery
-//= require blueimp-file-upload/vendor/jquery.ui.widget
-//= require blueimp-file-upload/jquery.iframe-transport
-//= require blueimp-file-upload/jquery.fileupload
-//= require nprogress
-//= require lightbox2
 
 //= require_tree ./angular/modules
 //= require_tree ./angular/controllers

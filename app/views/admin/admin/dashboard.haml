@@ -7,73 +7,41 @@
     .panel.text-center
       %h2= @guests.count
       %p= "Guests".pluralize(@guests.count)
-      %small
-        %span.text--success
-          = Guest.attending.count
-          Yes
-        |
-        %span.text--error
-          = Guest.not_attending.count
-          No
-        |
-        = Guest.attendance_unknown.count
-        Not RSVPd
   %li
     .panel.text-center
-      %h2= @event.days_to_go
-      %p= "#{"Days".pluralize(@event.days_to_go)} to go"
+      %h2= Guest.attendance_unknown.count
+      %p= "Not RSVPd"
+  %li
+    .panel.text-center
+      %h2= Guest.attending.count
+      %p= "Attending"
+  %li
+    .panel.text-center
+      %h2= Guest.not_attending.count
+      %p= "Not attending"
 
-%dl.tabs{"data-tab" => ""}
-  %dd.active
-    %a{:href => "#guests"} Guests
-  %dd
-    %a{:href => "#settings"} Details
-  //%dd
-  //  %a{:href => "#content"} Content
-  %dd
-    %a{:href => "#venue"} Venue photographs
-.tabs-content
+#guests.content.active
+  %table
+    %thead
+      %tr
+        %th Guest
+        %th RSVP'd
+        %th Actions
+    %tbody
+      - @guests.each do |guest|
+        %tr
+          %td= guest.name
+          %td
+            = guest.rsvp
+          %td
+            = link_to "edit", edit_admin_event_guest_path(@event, guest)
+            = link_to "delete", admin_event_guest_path(@event, guest), data: { confirm: "Are you sure you want to delete this guest?" }, method: :delete
+  = link_to "New Guest", new_admin_event_guest_path(@event)
+
   #settings.content
+    %h2 Event details
     - if @guests.empty?
       %p.alert
         You haven't added any guests yet. Why not #{link_to "add some now", new_guest_path}?
     - else
       = render partial: "events/form"
-
-  #content.content
-    %table
-      %thead
-        %tr
-          %th Title
-          %th Actions
-      %tbody
-        - @event.sections.each do |section|
-          %tr
-            %td= section.title
-            %td
-              = link_to "edit", edit_admin_event_section_path(@event, section)
-              = link_to "delete", admin_event_section_path(@event, section), data: { confirm: "Are you sure you want to delete this section?" }, method: :delete
-
-    = render partial: "admin/sections/form"
-
-  #venue.content
-    = render partial: "venue_photos/index"
-    = render partial: "venue_photos/form"
-  #guests.content.active
-    %table
-      %thead
-        %tr
-          %th Guests
-          %th RSVP'd
-          %th Actions
-      %tbody
-        - @groups.each do |group|
-          %tr
-            %td= group.title
-            %td
-              - group.guests.each do |guest|
-                = guest.rsvp
-            %td
-              = link_to "edit", edit_admin_event_group_path(@event, group)
-              = link_to "delete", admin_event_group_path(@event, group), data: { confirm: "Are you sure you want to delete this group of guests?" }, method: :delete
-    = link_to "New Guest", new_admin_event_guest_path(@event)

@@ -7,7 +7,6 @@ class Admin::AdminController < ApplicationController
     @guests = GuestDecorator.all
     @groups = Group.all.decorate
 
-    @section = Section.new
   end
 
   private

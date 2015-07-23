@@ -5,7 +5,7 @@
     .column.small-12
       %h1 Brains and Packhorse
 
-#event--cover 
+#event--cover
   .row
     .column.small-12
       %h2= "#{@event.partner_one} & #{@event.partner_two}"
@@ -17,7 +17,7 @@
     .column.small-12
       %br
       = link_to raw("RSVP"), "#rsvp", class: "button large js-scroll-to"
-    
+
 #location.inverted.paralax{ :style => "background-image: url('#{@primary_venue_photo}');" }
   .row
     .column.small-12
@@ -34,11 +34,6 @@
       %br
 
 %br
-
-//.row-fluid.overflow
-//  %ul.small-block-grid-3
-//    - @venue_photos.first(3).each do |venue_photo|
-//      %li= image_tag venue_photo.file_url
 
 .row
   .column.small-12
@@ -159,18 +154,3 @@
       .column.small-12.medium-8.medium-offset-2
         %h5= section.title
         = raw(section.content.from_markdown_to_html)
-
-
-//.row
-//  .column.small-12.medium-8.medium-offset-2
-//    %h5 Photos
-//
-//- if @event.show_photos?
-//  = render partial: "photos/form"
-//  = render partial: "photos/index"
-//  #modalDropImages.reveal-modal{"data-reveal" => "", :style => "display: block;"}
-//    %h2.text--orange Drop images to upload
-//- else
-//  .row
-//    .column.small-12
-//      %p We invite you back to this website after the wedding to view and upload photos

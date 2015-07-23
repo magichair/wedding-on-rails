@@ -1,10 +1,7 @@
 class Admin::GuestsController < ApplicationController
   layout "admin"
   before_filter :set_event
-  before_filter :set_group, only: [:index, :show]
-  before_filter :set_groups, only: [:index]
   before_filter :set_guest, only: [:show, :update, :edit, :destroy]
-  before_filter :set_guests, only: [:index]
 
   def index
     render json: @guests
@@ -18,7 +15,7 @@ class Admin::GuestsController < ApplicationController
     @guest = Guest.new(guest_params)
     @guest.event = @event
     @guest.save!
-    redirect_to :back
+    redirect_to admin_root_path
   end
 
   def edit
@@ -41,19 +38,11 @@ class Admin::GuestsController < ApplicationController
   private
 
   def guest_params
-    params.require(:guest).permit(:name, :rsvp, :invited_to_ceremony, :invited_to_evening, :vegetarian, :arrival_transportation_required, :departing_transport_requred, :group_id)
+    params.require(:guest).permit(:name, :rsvp, :invited_to_ceremony, :invited_to_evening, :vegetarian)
   end
 
   def set_event
     @event = Event.find params[:event_id] || default_event
-  end
-
-  def set_group
-    @group = @event.groups.find params[:group_id]
-  end
-
-  def set_groups
-    @groups = @event.groups.all
   end
 
   def set_guest
@@ -61,7 +50,4 @@ class Admin::GuestsController < ApplicationController
     @guest = @event.guests.find guest_id
   end
 
-  def set_guests
-    @guests = @group.guests.all
-  end
 end

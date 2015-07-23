@@ -18,18 +18,4 @@
   }
 }
 
-.cb-checkbox.checked .cb-inner {
-  background-color: $orange;
-  border-color: darken($orange, 5%);
-}
-
-.cb-checkbox:hover .cb-inner {
-  border-color: $gray;
-}
-
-.progress .meter {
-  background: $stone;
-  background: asset-url("themes/popcorn/stripes.png");
-}
-
 p {text-align: center;}

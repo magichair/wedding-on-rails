@@ -9,10 +9,6 @@ Rails.application.routes.draw do
     resources :groups do
       resources :guests
     end
-
-    resources :photos
-    resources :venue_photos
-
     resources :guests
     resources :groups do
       put 'rsvp', on: :collection
@@ -22,18 +18,15 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :events, except: [:index] do
-      resources :sections
       resources :guests, except: [:show]
       resources :groups
     end
     root "admin#dashboard"
   end
 
-  resources :photos, :only => [:index, :create, :destroy]
 
   match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
 
   root "events#show"
 
- 
 end
