@@ -4,7 +4,7 @@ source "https://rails-assets.org"
 ruby '2.1.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails"
-gem "rails", "4.1.6"
+gem 'rails', '4.2.1'
 # Use mysql as the database for Active Record
 gem 'pg'
 # Use SCSS for stylesheets
@@ -66,7 +66,7 @@ group :production do
 end
 
 gem "active_model_serializers"
-gem "foundation-rails"
+gem "foundation-rails", '5.4.5'
 gem "haml-rails"
 gem "simple_form"
 gem "sorcery"

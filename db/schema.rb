@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20150102105835) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "delayed_jobs", force: true do |t|
+  create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0, null: false
     t.integer  "attempts",   default: 0, null: false
     t.text     "handler",                null: false
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20150102105835) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
-  create_table "event_notifications", force: true do |t|
+  create_table "event_notifications", force: :cascade do |t|
     t.string   "notification_type"
     t.integer  "guest_id"
     t.integer  "event_id"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20150102105835) do
     t.integer  "photo_id"
   end
 
-  create_table "events", force: true do |t|
+  create_table "events", force: :cascade do |t|
     t.date     "date"
     t.string   "location"
     t.boolean  "active"
@@ -62,14 +62,14 @@ ActiveRecord::Schema.define(version: 20150102105835) do
     t.text     "venue_directions"
   end
 
-  create_table "groups", force: true do |t|
+  create_table "groups", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "rsvp",       default: false
     t.integer  "event_id"
   end
 
-  create_table "guests", force: true do |t|
+  create_table "guests", force: :cascade do |t|
     t.string   "name"
     t.boolean  "rsvp"
     t.boolean  "invited_to_ceremony"
@@ -84,14 +84,14 @@ ActiveRecord::Schema.define(version: 20150102105835) do
     t.integer  "event_id"
   end
 
-  create_table "photos", force: true do |t|
+  create_table "photos", force: :cascade do |t|
     t.string   "file"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "event_id"
   end
 
-  create_table "sections", force: true do |t|
+  create_table "sections", force: :cascade do |t|
     t.string   "title"
     t.text     "content"
     t.integer  "event_id"
@@ -99,13 +99,13 @@ ActiveRecord::Schema.define(version: 20150102105835) do
     t.datetime "updated_at"
   end
 
-  create_table "task_lists", force: true do |t|
+  create_table "task_lists", force: :cascade do |t|
     t.integer  "event_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "tasks", force: true do |t|
+  create_table "tasks", force: :cascade do |t|
     t.integer  "event_id"
     t.integer  "task_list_id"
     t.boolean  "completed"
@@ -114,7 +114,7 @@ ActiveRecord::Schema.define(version: 20150102105835) do
     t.datetime "updated_at"
   end
 
-  create_table "venue_photos", force: true do |t|
+  create_table "venue_photos", force: :cascade do |t|
     t.string   "file"
     t.integer  "event_id"
     t.datetime "created_at"

@@ -3,9 +3,10 @@
 defaults: &defaults
   encoding: utf-8
   username: postgres
-  password: j0bb3hplop
+  password: password
   pool: 5
   host: 127.0.0.1
+  port: 5433
   reconnect: true
   adapter: postgresql
 

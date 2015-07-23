@@ -23,16 +23,6 @@ Follow the yellow brick road
   """
 })
 
-venue_photos = VenuePhoto.create!([
-  { event_id: event.id, file: seed_image("venue_photos/1.jpg") },
-  { event_id: event.id, file: seed_image("venue_photos/2.jpg") },
-  { event_id: event.id, file: seed_image("venue_photos/3.jpg") },
-  { event_id: event.id, file: seed_image("venue_photos/4.jpg") }
-])
-
-event.primary_venue_photo = venue_photos.last.id
-event.save!
-
 senters = Group.create!({
   event_id: event.id
 })
@@ -102,7 +92,3 @@ guest_rsvp_true = Guest.create!({
   group_id: debug.id,
   rsvp: true
 })
-
-
-
-

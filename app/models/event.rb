@@ -8,8 +8,6 @@ class Event < ActiveRecord::Base
   has_many :venue_photos
   has_many :event_notifications
 
-  after_create :create_event_task_list
-
   def days_to_go
     (Event.last.date - Date.today).to_int.clamp(0, Float::INFINITY)
   end
