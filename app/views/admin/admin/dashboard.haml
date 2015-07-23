@@ -2,25 +2,26 @@
 
 %h1 Brains and Packhorse
 
-%ul.small-block-grid-4
-  %li
-    .panel.text-center
-      %h2= @guests.count
-      %p= "Guests".pluralize(@guests.count)
-  %li
-    .panel.text-center
-      %h2= Guest.attendance_unknown.count
-      %p= "Not RSVPd"
-  %li
-    .panel.text-center
-      %h2= Guest.attending.count
-      %p= "Attending"
-  %li
-    .panel.text-center
-      %h2= Guest.not_attending.count
-      %p= "Not attending"
+#guests.content
 
-#guests.content.active
+  %ul.small-block-grid-4
+    %li
+      .panel.text-center
+        %h2= @guests.count
+        %p= "Guests".pluralize(@guests.count)
+    %li
+      .panel.text-center
+        %h2= Guest.attendance_unknown.count
+        %p= "Not RSVPd"
+    %li
+      .panel.text-center
+        %h2= Guest.attending.count
+        %p= "Attending"
+    %li
+      .panel.text-center
+        %h2= Guest.not_attending.count
+        %p= "Not attending"
+
   %table
     %thead
       %tr
@@ -36,12 +37,12 @@
           %td
             = link_to "edit", edit_admin_event_guest_path(@event, guest)
             = link_to "delete", admin_event_guest_path(@event, guest), data: { confirm: "Are you sure you want to delete this guest?" }, method: :delete
-  = link_to "New Guest", new_admin_event_guest_path(@event)
+  = link_to "Add new guest", new_admin_event_guest_path(@event), :class => "button"
 
-  #settings.content
-    %h2 Event details
-    - if @guests.empty?
-      %p.alert
-        You haven't added any guests yet. Why not #{link_to "add some now", new_guest_path}?
-    - else
-      = render partial: "events/form"
+#settings.content
+  %h2 Event details
+  - if @guests.empty?
+    %p.alert
+      You haven't added any guests yet. Why not #{link_to "add some now", new_guest_path}?
+  - else
+    = render partial: "events/form"

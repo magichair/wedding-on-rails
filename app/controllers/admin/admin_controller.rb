@@ -5,8 +5,6 @@ class Admin::AdminController < ApplicationController
   def dashboard
     @event = Event.first
     @guests = GuestDecorator.all
-    @groups = Group.all.decorate
-
   end
 
   private
