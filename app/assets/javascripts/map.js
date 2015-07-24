@@ -74,6 +74,8 @@ google.maps.event.addListener(marker3,'click',
  });
 }
 window.onload = function() {
- wpgmappity_maps_loaded();
+  if($("#wpgmappitymap").length > 0) {
+    wpgmappity_maps_loaded();
+  }
 };
 })()

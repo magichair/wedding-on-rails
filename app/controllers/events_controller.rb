@@ -14,13 +14,15 @@ class EventsController < ApplicationController
   def search
     names = params[:search][:query].downcase.split(" ")
     if names.count > 0
-      @guest = Guest.where("lower(name) IN (?) AND (lower(partner_name) IN (?) OR partner_name = ? OR partner_name = '')",names,names,nil)
+      names.map! { |name| "%#{name}%" }
+      @guest = Guest.where("lower(name) LIKE ANY (array[?]) AND (lower(partner_name) LIKE ANY (array[?]) OR partner_name = ? OR partner_name = '')",names,names,nil)
+      if @guest.any?
+        redirect_to rsvp_event_guest_path(@event,@guest.last) and return
+      end
     end
-    if @guest.any?
-      redirect_to rsvp_event_guest_path(@event,@guest.last)
-    else
-      redirect_to event_path(@event, :anchor => "rsvp"), :flash => { :error => "Can not find your invite, please try again only including first names, or email Helen with your reply." }
-    end
+
+    redirect_to event_path(@event, :anchor => "rsvp"), :flash => { :error => "Can not find your invite, please try again including only first names, or email Helen with your reply." }
+
   end
 
   private
