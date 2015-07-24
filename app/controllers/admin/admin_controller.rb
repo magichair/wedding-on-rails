@@ -5,6 +5,7 @@ class Admin::AdminController < ApplicationController
   def dashboard
     @event = Event.first
     @guests = GuestDecorator.all
+    @music_suggestions = Guest.where("music IS NOT NULL and music != ''")
   end
 
   private

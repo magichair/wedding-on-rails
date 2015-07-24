@@ -6,7 +6,7 @@
     %li
       .panel.text-center
         %h2= @guests.count
-        %p= "Guests".pluralize(@guests.count)
+        %p= "Invited"
     %li
       .panel.text-center
         %h2= Guest.attendance_unknown.count
@@ -20,12 +20,33 @@
         %h2= Guest.not_attending.count
         %p= "Not attending"
 
+  %ul.small-block-grid-4
+    %li
+      .panel.text-center
+        %h2= @guests.attending.where("vegetarian = true").count
+        %p= "Vegetarians"
+    %li
+      .panel.text-center
+        %h2= @guests.attending.where("allergies IS NOT NULL and allergies != ''").count
+        %p= "Guests with allergies"
+    %li
+      .panel.text-center
+        %h2= @guests.attending.where("music IS NOT NULL and music != ''").count
+        %p= link_to "Music suggestions", "#music"
+    %li
+      .panel.text-center
+        %h2= @guests.where("has_kids = true").count
+        %p= "Guests with kids"
+
   %table
     %thead
       %tr
-        %th Guest
-        %th RSVP'd
-        %th Actions
+        %th Name(s)
+        %th RSVP
+        %th Vegetarian
+        %th Allergies
+        %th Kids
+        %th
     %tbody
       - @guests.each do |guest|
         %tr
@@ -34,8 +55,36 @@
             -if guest.partner_name.present?
               = " and #{guest.partner_name}"
           %td
-            = guest.rsvp
+            -if guest.rsvp.present?
+              = (guest.rsvp?) ? "Attending" : "Not attending"
           %td
-            = link_to "edit", edit_admin_event_guest_path(@event, guest)
-            = link_to "delete", admin_event_guest_path(@event, guest), data: { confirm: "Are you sure you want to delete this guest?" }, method: :delete
+            -if guest.vegetarian?
+              Yes
+          %td
+            -if guest.allergies.present?
+              Yes
+          %td
+            -if guest.has_kids?
+              Yes
+          %td
+            = link_to "View / Edit", edit_admin_event_guest_path(@event, guest)
+            = link_to "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Delete".html_safe, admin_event_guest_path(@event, guest), data: { confirm: "Are you sure you want to delete this guest?" }, method: :delete
   = link_to "Add new guest", new_admin_event_guest_path(@event), :class => "button"
+
+  %br
+  %br
+  %h2#music Music suggestions
+  %table
+    %thead
+      %tr
+        %th Suggestion
+        %th Guest
+    %tbody
+      - @music_suggestions.each do |guest|
+        %tr
+          %td
+            =guest.music
+          %td
+            = "#{guest.name}"
+            -if guest.partner_name.present?
+              = " and #{guest.partner_name}"
