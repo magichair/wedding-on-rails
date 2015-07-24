@@ -1,0 +1,8 @@
+%h2
+  =@guest.name
+  = " and #{@guest.partner_name}" if @guest.partner_name.present?
+%p
+  Not you?
+  = link_to "Find your invite", event_path(@event, :anchor => "rsvp")
+
+= render partial: "form"

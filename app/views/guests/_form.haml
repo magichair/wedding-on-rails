@@ -1,0 +1,10 @@
+-if flash[:notice].present?
+  %p= flash[:notice]
+= simple_form_for [@event, @guest] do |f|
+  = f.input :rsvp, :default => true
+  = f.input :vegetarian
+  = f.input :allergies
+  = f.input :music
+  -if @guest.has_kids?
+    = f.input :kids_menu_choices
+  = f.button :submit, :value => "RSVP"
