@@ -16,9 +16,11 @@
   .row
     .column.small-12
       %h2 RSVP
+      -if flash[:error].present?
+        %p= flash[:error]
       = simple_form_for :search, url: [:search, @event] do |f|
-        = f.input :query, placeholder: "To whom is your invite addressed?"
-        = f.submit
+        = f.input :query, placeholder: "Enter your name(s) as they are written on the invite", :label => false
+        = f.button :submit, :class => "button", :value => "Continue"
 
 #location
   .row
