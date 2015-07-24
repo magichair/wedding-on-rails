@@ -29,7 +29,10 @@
     %tbody
       - @guests.each do |guest|
         %tr
-          %td= "#{guest.name} and #{guest.partner_name}"
+          %td
+            = "#{guest.name}"
+            -if guest.partner_name.present?
+              = " and #{guest.partner_name}"
           %td
             = guest.rsvp
           %td
