@@ -23,7 +23,7 @@ class Admin::GuestsController < ApplicationController
 
   def update
     @guest.update_attributes(guest_params)
-    render :nothing => true, :status => 200
+    redirect_to admin_root_path
   end
 
   def destroy
@@ -34,7 +34,10 @@ class Admin::GuestsController < ApplicationController
   private
 
     def guest_params
-      params.require(:guest).permit(:name, :rsvp, :invited_to_ceremony, :invited_to_evening, :vegetarian, :allergies, :has_kids, :kids_menu_choice, :music)
+      params.require(:guest).permit(
+        :name, :rsvp, :invited_to_ceremony,
+        :invited_to_evening, :vegetarian, :allergies,
+        :has_kids, :kids_menu_choices, :music, :partner_name)
     end
 
     def set_event

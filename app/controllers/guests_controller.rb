@@ -10,11 +10,8 @@ class GuestsController < ApplicationController
   end
 
   def rsvp
-
-  end
-
-  def search
-
+    @event = Event.find(params[:event_id])
+    @guest = Guest.find(params[:id])
   end
 
   private

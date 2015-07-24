@@ -6,12 +6,14 @@ Rails.application.routes.draw do
 
   resources :events, except: [:index] do
 
+    member do
+      post 'search'
+    end
+
     resources :guests do
-      collection do
-        post 'search'
-      end
       member do
         post 'rsvp'
+        get 'rsvp'
       end
     end
 

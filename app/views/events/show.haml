@@ -16,11 +16,9 @@
   .row
     .column.small-12
       %h2 RSVP
-      = simple_form_for search_event_guests_path(@event) do |f|
-        .row
-          .column.small-12.column.medium-6.medium-offset-3
-            = f.input :guest, label: false, placeholder: "To whom is your invite addressed?"
-            = f.submit
+      = simple_form_for :search, url: [:search, @event] do |f|
+        = f.input :query, placeholder: "To whom is your invite addressed?"
+        = f.submit
 
 #location
   .row
