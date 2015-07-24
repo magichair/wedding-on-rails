@@ -4,9 +4,9 @@
   = f.input :invited_to_ceremony
   = f.input :invited_to_evening
   = f.input :vegetarian
-  = f.input :allergies
-  = f.input :has_kids
+  = f.input :allergies, :placeholder => "List any allergies yourself, your partner or kids have"
+  = f.input :music, :label => "Music suggestions"
+  = f.input :has_kids, :label => "Kids invited?"
   = f.input :kids_menu_choices
-  = f.input :music
   %br
   = f.button :submit

@@ -1,14 +1,12 @@
 = content_for :title, "#{@event.partner_one} & #{@event.partner_two}'s Wedding - #{@event.formatted_time}"
 
-%header#site.box.box--orange
-  .row
-    .column.small-12
-      %h1 Brains and Packhorse
+=render "layouts/header"
 
 #event--cover
   .row
     .column.small-12
-      %h2= "#{@event.partner_one} & #{@event.partner_two}"
+      %h2
+        ="#{@event.partner_one} & #{@event.partner_two}"
       %span.separator
       %p= @event.formatted_time
 
@@ -33,7 +31,3 @@
     .column.small-6
       :plain
         <div class="map wpgmappity_container" id="wpgmappitymap"></div>
-
-%footer#site.box.box--orange
-  .row
-    .column.small-12

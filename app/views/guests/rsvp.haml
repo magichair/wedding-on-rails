@@ -1,8 +1,18 @@
-%h2
-  =@guest.name
-  = " and #{@guest.partner_name}" if @guest.partner_name.present?
-%p
-  Not you?
-  = link_to "Find your invite", event_path(@event, :anchor => "rsvp")
+= content_for :title, "#{@event.partner_one} & #{@event.partner_two}'s Wedding - #{@event.formatted_time}"
 
-= render partial: "form"
+#event--cover
+  .row
+    .column.small-12
+      %h2 Send your RSVP
+      %span.separator
+      %p
+        =@guest.name
+        = " and #{@guest.partner_name}" if @guest.partner_name.present?
+      %p.small
+        Not you?
+        = link_to "Find your invite", event_path(@event, :anchor => "rsvp")
+
+.box--orange#rsvp_form
+  .row
+    .column.small-12
+      = render partial: "form"

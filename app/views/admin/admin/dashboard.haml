@@ -5,20 +5,20 @@
   %ul.small-block-grid-4
     %li
       .panel.text-center
-        %h2= @guests.count
-        %p= "Invited"
+        %h2= Guest.where("invited_to_ceremony = true").count + Guest.where("invited_to_ceremony = true and partner_name IS NOT NULL").count
+        %p= "Invited to ceremony"
     %li
       .panel.text-center
-        %h2= Guest.attendance_unknown.count
-        %p= "Not RSVPd"
+        %h2= Guest.where("invited_to_ceremony = false").count + Guest.where("invited_to_ceremony = false and partner_name IS NOT NULL").count
+        %p= "Invited to reception only"
     %li
       .panel.text-center
-        %h2= Guest.attending.count
-        %p= "Attending"
+        %h2= Guest.attending.where("invited_to_ceremony = false").count + Guest.attending.where("invited_to_ceremony = false and partner_name IS NOT NULL").count
+        %p= "Attending ceremony"
     %li
       .panel.text-center
-        %h2= Guest.not_attending.count
-        %p= "Not attending"
+        %h2= Guest.not_attending.where("invited_to_ceremony = false").count + Guest.not_attending.where("invited_to_ceremony = false and partner_name IS NOT NULL").count
+        %p= "Attending reception only"
 
   %ul.small-block-grid-4
     %li
@@ -31,17 +31,18 @@
         %p= "Guests with allergies"
     %li
       .panel.text-center
-        %h2= @guests.attending.where("music IS NOT NULL and music != ''").count
-        %p= link_to "Music suggestions", "#music"
+        %h2= @guests.attending.where("has_kids = true").count
+        %p= "Guests bringing kids"
     %li
       .panel.text-center
-        %h2= @guests.where("has_kids = true").count
-        %p= "Guests with kids"
+        %h2= @guests.attending.where("music IS NOT NULL and music != ''").count
+        %p= link_to "Music suggestions", "#music"
 
   %table
     %thead
       %tr
         %th Name(s)
+        %th Ceremony
         %th RSVP
         %th Vegetarian
         %th Allergies
@@ -54,6 +55,9 @@
             = "#{guest.name}"
             -if guest.partner_name.present?
               = " and #{guest.partner_name}"
+          %td
+            -if guest.invited_to_ceremony?
+              Yes
           %td
             -if guest.rsvp.present?
               = (guest.rsvp?) ? "Attending" : "Not attending"
