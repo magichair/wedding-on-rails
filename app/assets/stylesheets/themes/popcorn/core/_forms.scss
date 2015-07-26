@@ -8,11 +8,23 @@ input[type="text"] {
   box-shadow: none;
   transition: none;
   color: $black;
+  background: $stone;
+  font-weight: 100;
+  letter-spacing: 1px;
+  padding: 1.75em 1.25em;
+  float: right;
+}
 
+label {
+  font-size: 1.25em;
+  font-weight: 100;
+  float: left;
+  vertical-align: middle;
 }
 
 input[type="text"].cta {
   border: 0;
+  float: none;
   padding: 1.75em 1.25em;
   font-size: 1.25em;
   margin: 0 auto;
@@ -21,5 +33,4 @@ input[type="text"].cta {
   font-weight: 100;
   letter-spacing: 1px;
   text-align: center;
-  -webkit-font-smoothing: antialiased;
 }

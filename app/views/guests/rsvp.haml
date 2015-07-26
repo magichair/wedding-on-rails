@@ -4,13 +4,13 @@
   .row
     .column.small-12
       %h2
-        Reply for
+        RSVP
         %br
         =@guest.name
         = " and #{@guest.partner_name}" if @guest.partner_name.present?
       %p.small
         Not you?
-        = link_to "Enter the name of your invite", event_path(@event, :anchor => "rsvp")
+        = link_to "Enter the name on your invite", event_path(@event, :anchor => "rsvp")
 
 .box--orange#rsvp_form
   .row

@@ -97,6 +97,57 @@
   }
 }
 
+#rsvp_form {
+  form {
+    max-width: 60%;
+    margin: 0 auto -6em;
+    .input {
+      width: 100%;
+      display: block;
+      clear: both;
+      padding-bottom: 2.5em;
+      display: table;
+      &.radio_buttons {
+        padding-bottom: 1em;
+        .control-label {
+          min-width: 40%;
+          display: inline-block;
+          clear: left;
+          width: auto;
+          margin-right: 3em;
+        }
+        .radio {
+          margin-top: 5px;
+          display: inline-block;
+          float: left;
+          margin-left: 1em;
+          input[type="radio"] {
+            margin-right: 1em;
+            position: relative;
+            top: -2px;
+          }
+        }
+      }
+    }
+    label {
+      display: block;
+      text-align:left;
+      margin-bottom: 0.5em;
+      width: 100%;
+      font-weight: 100;
+      font-size: 1.125em;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
+      letter-spacing: 1px;
+    }
+    input[type="text"] {
+      width: 100%;
+    }
+    .button {
+      margin-top: 1.5em;
+    }
+  }
+}
+
 #location {
   .row {
     max-width: 100%;
