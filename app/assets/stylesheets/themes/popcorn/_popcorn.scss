@@ -1,6 +1,6 @@
 @import "core/variables";
 @import "core/typography";
-@import "core/icons";
+@import "core/forms";
 
 @import "object/card";
 
@@ -26,6 +26,7 @@
 #event--cover {
   .row {
     padding: 71px 0 110px;
+    position: relative;
     h2 {
       margin: 0;
       padding: 1em 0;
@@ -49,14 +50,37 @@
     }
     p.small {
       text-transform: none;
-      margin-top: -2.5em;
+      margin-top: 4em;
       font-size: 1em;
+      margin-bottom: -5.5em;
+      color: #696969;
+    }
+  }
+}
+
+#event--rsvp {
+  .row {
+    h2 {
+      padding: 1em 0 0.75em;
+      font-size: 2.75em;
+      font-weight: 100;
+      letter-spacing: 0.1em;
+      margin: 0;
+    }
+    p.small {
+      text-transform: none;
+      margin-top: 0em;
+      font-size: 1em;
+      color: #696969;
+      font-weight: 100;
     }
   }
 }
 
 #rsvp {
-
+  h2 {
+    font-weight: 100;
+  }
 }
 
 #location {

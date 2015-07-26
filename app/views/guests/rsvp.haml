@@ -1,16 +1,17 @@
 = content_for :title, "#{@event.partner_one} & #{@event.partner_two}'s Wedding - #{@event.formatted_time}"
 
-#event--cover
+#event--rsvp
   .row
     .column.small-12
-      %h2 Send your RSVP
-      %span.separator
-      %p
+      %h2
+        RSVP for
+        %br
         =@guest.name
         = " and #{@guest.partner_name}" if @guest.partner_name.present?
       %p.small
         Not you?
-        = link_to "Find your invite", event_path(@event, :anchor => "rsvp")
+        = link_to "Enter the name of your invite", event_path(@event, :anchor => "rsvp")
+
 
 .box--orange#rsvp_form
   .row
