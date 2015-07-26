@@ -17,7 +17,7 @@ class EventsController < ApplicationController
       names = names.map{ |name| name.strip }.join('|')
       @guest = Guest.where("lower(name) SIMILAR TO ? AND (lower(partner_name) SIMILAR TO ? OR (partner_name IS NULL OR partner_name = ''))","(#{names})%","%(#{names})%")
       if @guest.any?
-        redirect_to rsvp_event_guest_path(@event,@guest.last) and return
+        redirect_to rsvp_event_guest_path(@event,@guest.first) and return
       end
     end
 

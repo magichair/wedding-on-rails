@@ -1,7 +1,6 @@
 class EventMailer < ApplicationMailer
   def notifications(rsvps, photos)
     @rsvps = rsvps
-    @photos = photos
-    mail to: "us@brainsandpackhorse.co.uk", subject: "Notification from brainsandpackhorse.co.uk"
+    mail to: "darthhelen@googlemail.com, andrewsprinz@gmail.com", subject: "RSVP from Brains and Packhorse"
   end
 end
