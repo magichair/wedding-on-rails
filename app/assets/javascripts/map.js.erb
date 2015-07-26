@@ -26,13 +26,13 @@ var options = {
 var wpgmappitymap = new google.maps.Map(document.getElementById('wpgmappitymap'), options);
 var point0 = new google.maps.LatLng(55.948849,-3.2081126);
 var marker0= new google.maps.Marker({
- icon : '/assets/venue.png',
+ icon : "<%= asset_url('venue.png') %>",
  position : point0,
  map : wpgmappitymap
  });
 var point1 = new google.maps.LatLng(55.9457656,-3.2423226);
 var marker1= new google.maps.Marker({
- icon : '/assets/hotel.png',
+ icon : "<%= asset_url('hotel.png') %>",
  position : point1,
  map : wpgmappitymap
  });
@@ -44,7 +44,7 @@ google.maps.event.addListener(marker1,'click',function() {
 });
 var point2 = new google.maps.LatLng(55.946081,-3.218328);
 var marker2= new google.maps.Marker({
- icon : '/assets/hotel.png',
+ icon : "<%= asset_url('hotel.png') %>",
  position : point2,
  map : wpgmappitymap
  });
@@ -56,7 +56,7 @@ function() {
 });
 var point3 = new google.maps.LatLng(55.9509735,-3.2040625);
 var marker3= new google.maps.Marker({
- icon : '/assets/hotel.png',
+ icon : "<%= asset_url('hotel.png') %>",
  position : point3,
  map : wpgmappitymap
  });
