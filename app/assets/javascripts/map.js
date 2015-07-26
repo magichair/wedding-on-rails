@@ -1,6 +1,6 @@
 (function(){
 function wpgmappity_maps_loaded() {
-var latlng = new google.maps.LatLng(55.948849,-3.2081126);
+var latlng = new google.maps.LatLng(55.9483936,-3.2224041);
 var styles = [
   {
     "featureType": "poi",
@@ -30,47 +30,41 @@ var marker0= new google.maps.Marker({
  position : point0,
  map : wpgmappitymap
  });
-google.maps.event.addListener(marker0,'click',
- function() {
- var infowindow = new google.maps.InfoWindow(
- {content: '<h3 class="font-book-antiqua">The Ghullie Dhu</h3><a target=\"_blank\" href=\"http://www.ghillie-dhu.co.uk/\">Go to website</a>'});
- infowindow.open(wpgmappitymap,marker0);
- });
 var point1 = new google.maps.LatLng(55.9457656,-3.2423226);
 var marker1= new google.maps.Marker({
  icon : '/assets/hotel.png',
  position : point1,
  map : wpgmappitymap
  });
-google.maps.event.addListener(marker1,'click',
- function() {
- var infowindow = new google.maps.InfoWindow(
- {content: '<h3 class="font-book-antiqua">The Murrayfield Hotel</h3><a target=\"_blank\" href=\"http://www.themurrayfieldhotel.com/\">Go to website</a>'});
- infowindow.open(wpgmappitymap,marker1);
- });
+var infowindow1 = new google.maps.InfoWindow(
+ {content: '<br /><p style="margin-bottom: 0; padding-bottom: 10px">The Murrayfield Hotel<br /><a target=\"_blank\" href=\"http://www.themurrayfieldhotel.com/\">Book online</a></p>'
+});
+google.maps.event.addListener(marker1,'click',function() {
+  infowindow1.open(wpgmappitymap,marker1);
+});
 var point2 = new google.maps.LatLng(55.946081,-3.218328);
 var marker2= new google.maps.Marker({
  icon : '/assets/hotel.png',
  position : point2,
  map : wpgmappitymap
  });
+ var infowindow2 = new google.maps.InfoWindow(
+ {content: '<br /><p style="margin-bottom: 0; padding-bottom: 10px">Tune Hotel Haymarket<br /><a target=\"_blank\" href=\"http://tunehotels.com/\">Book online</a></p>'});
 google.maps.event.addListener(marker2,'click',
- function() {
- var infowindow = new google.maps.InfoWindow(
- {content: '<h3 class="font-book-antiqua">Tune Hotel Haymarket </h3><a target=\"_blank\" href=\"http://tunehotels.com/\">Go to website</a>'});
- infowindow.open(wpgmappitymap,marker2);
- });
+function() {
+  infowindow2.open(wpgmappitymap,marker2);
+});
 var point3 = new google.maps.LatLng(55.9509735,-3.2040625);
 var marker3= new google.maps.Marker({
  icon : '/assets/hotel.png',
  position : point3,
  map : wpgmappitymap
  });
+ var infowindow3 = new google.maps.InfoWindow(
+ {content: '<br /><p style="margin-bottom: 0; padding-bottom: 10px">Premier Inn<br /><a target=\"_blank\" href=\"http://www.premierinn.com\">Book online</a>'});
 google.maps.event.addListener(marker3,'click',
  function() {
- var infowindow = new google.maps.InfoWindow(
- {content: '<h3 class="font-book-antiqua">Premier Inn</h3><a target=\"_blank\" href=\"http://www.premierinn.com\">Go to website</a>'});
- infowindow.open(wpgmappitymap,marker3);
+ infowindow3.open(wpgmappitymap,marker3);
  });
 }
 window.onload = function() {

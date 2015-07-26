@@ -1,9 +1,9 @@
 -if flash[:notice].present?
   %p= flash[:notice]
 = simple_form_for [@event, @guest] do |f|
-  = f.input :rsvp, :default => true, :label => "Can #{@guest.name} attend?", :as => :select, :collection => {"Yes" => true,"No" => false}, :selected => @guest.rsvp
+  = f.input :rsvp, :default => true, :label => "Can #{@guest.name} attend?", :as => :radio_buttons, :collection => {"Yes" => true,"No" => false}, :selected => @guest.rsvp
   -if @guest.partner_name.present?
-    = f.input :partner_rsvp, :default => true, :label => "Can #{@guest.partner_name} attend?", :as => :select, :collection => {"Yes" => true,"No" => false}, :selected => @guest.partner_rsvp
+    = f.input :partner_rsvp, :default => true, :label => "Can #{@guest.partner_name} attend?", :as => :radio_buttons, :collection => {"Yes" => true,"No" => false}, :selected => @guest.partner_rsvp
   -if @guest.invited_to_ceremony
     = f.input :vegetarian, :label => "Are you vegetarian?"
     = f.input :allergies, :label => "Any allergies?", :placeholder => "List any allergies yourself, your partner or kids have"

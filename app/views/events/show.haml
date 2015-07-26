@@ -13,21 +13,28 @@
 .box--orange#rsvp
   .row
     .column.small-12
-      %h2 RSVP
       -if flash[:error].present?
-        %p= flash[:error]
+        %p.notice= flash[:error]
       = simple_form_for :search, url: [:search, @event] do |f|
-        = f.input :query, placeholder: "Enter your name(s) as they are written on the invite", :label => false
-        = f.button :submit, :class => "button", :value => "Continue"
+        = f.input :query, placeholder: "Enter the name on your invite to RSVP", :label => false, :input_html => { :class => "cta" }
+        = f.button :submit, :class => "button", :value => "Find your invite"
 
 #location
   .row
     -if flash[:notice].present?
       %p= flash[:notice]
-    .column.small-6
-      %h3= "The #{@event.venue_name}, #{@event.venue_address_city}"
-      %p Ceremony 1:30pm, Reception: 7:30pm
-      %p The Ghullie Dhu, 2 Rutland Square, Edinburgh
+    .column.small-6.details
+      %p.directions The venue is just 10 minutes from Waverley Station, or 5 from Haymarket. See the map for local hotels.
+      %address
+        The Ghullie Dhu,
+        %br
+        2 Rutland Square,
+        %br
+        Edinburgh
+      %p.times
+        Ceremony 1:30pm
+        %br
+        Reception: 7:30pm
     .column.small-6
       :plain
         <div class="map wpgmappity_container" id="wpgmappitymap"></div>

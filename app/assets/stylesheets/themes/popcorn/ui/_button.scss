@@ -1,11 +1,16 @@
 .button {
   -webkit-appearance: none;
   outline: none;
-  border-radius: 100px;
-  background-color: $orange;
-
+  padding: 0 0 10px 0;
+  width: auto;
+  background: none;
+  font-weight: 100;
+  font-size: 1.125em;
+  letter-spacing: 1px;
+  border-bottom: 2px solid $white;
   &:hover {
-    background-color: darken($orange, 5%);
+    border-bottom: 0;
+    padding-bottom: 12px;
   }
 }
 

@@ -1,0 +1,25 @@
+input[type="text"] {
+  border: none;
+  padding: 0.5em 1em;
+  margin: 0 auto;
+  width: 350px;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  transition: none;
+  color: $black;
+
+}
+
+input[type="text"].cta {
+  border: 0;
+  padding: 1.75em 1.25em;
+  font-size: 1.25em;
+  margin: 0 auto;
+  width: 600px;
+  background: $stone;
+  font-weight: 100;
+  letter-spacing: 1px;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+}

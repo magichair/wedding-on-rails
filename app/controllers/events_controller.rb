@@ -21,7 +21,7 @@ class EventsController < ApplicationController
       end
     end
 
-    redirect_to event_path(@event, :anchor => "rsvp"), :flash => { :error => "Can not find your invite, please try again including only first names, or email Helen with your reply." }
+    redirect_to event_path(@event, :anchor => "rsvp"), :flash => { :error => "We could not find your invite, please try again including only first names, or email Helen with your reply" }
 
   end
 
