@@ -3,7 +3,7 @@ header#site {
     font-weight: 400;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url("/assets/title.png");
+    background-image: image-url("title.png");
     width: 350px;
     height: 249px;
     padding-top: 2.125em;
@@ -14,6 +14,7 @@ header#site {
     text-transform: uppercase;
     font-size: 2.25em;
     line-height: 1.4;
+    font-weight: 100;
     letter-spacing: 0.125em;
   }
 }

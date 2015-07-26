@@ -12,9 +12,8 @@ footer.card {
 }
 
 footer#site {
-  min-height: 320px;
-  background-image: url("/assets/penguin.png");
+  min-height: 360px;
+  background-image: image-url("penguin.png");
   background-repeat: no-repeat;
   background-position: center;
-  margin-bottom: -10px;
 }

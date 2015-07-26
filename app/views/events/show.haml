@@ -24,17 +24,12 @@
     -if flash[:notice].present?
       %p= flash[:notice]
     .column.small-6.details
-      %p.directions The venue is just 10 minutes from Waverley Station, or 5 from Haymarket. See the map for local hotels.
       %address
         The Ghullie Dhu,
         %br
-        2 Rutland Square,
-        %br
-        Edinburgh
-      %p.times
-        Ceremony 1:30pm
-        %br
-        Reception: 7:30pm
+        2 Rutland Square, Edinburgh
+      %span.separator
+      %p.times The ceremony will take place at 1:30, reception begins 7:30. See map for local hotels.
     .column.small-6
       :plain
         <div class="map wpgmappity_container" id="wpgmappitymap"></div>
