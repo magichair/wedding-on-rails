@@ -9,7 +9,7 @@
   -if @guest.invited_to_ceremony
     = f.input :vegetarian, :label => "Are you vegetarian?", :as => :radio_buttons
     = f.input :allergies, :label => "Any allergies?", :placeholder => "List any allergies yourself, your, partner or kids have"
-  = f.input :music, :label => "Music suggestions", :placeholder => "Suggest any music you'd like to dance to at the reception!"
+  = f.input :music, :label => "Music suggestions", :placeholder => "Suggest any music you'd like to dance to at the reception"
   -if @guest.has_kids?
     = f.input :kids_menu_choices, :label => "Kids menu choices", :placeholder => "Choose from Chicken Nuggets, Fish Goujons, Pork Sausages, or Mac and Cheese"
   = f.button :submit, :value => "Send response"

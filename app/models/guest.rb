@@ -3,7 +3,9 @@ class Guest < ActiveRecord::Base
   validates_presence_of :event
   has_many :event_notifications
 
-  default_scope { order("invited_to_ceremony = true DESC, id ASC") }
+  def self.ordered 
+    order("invited_to_ceremony = true DESC, id ASC")
+  end
 
   def self.attending
     where({rsvp: true})
