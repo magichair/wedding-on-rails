@@ -1,10 +1,7 @@
 @import "core/typography";
 @import "core/forms";
 
-@import "object/card";
-
 @import "ui/button";
-@import "ui/card";
 @import "ui/header";
 @import "ui/footer";
 
@@ -53,6 +50,15 @@
       margin-bottom: -5.5em;
       color: #696969;
     }
+    @media all and (max-width: $mobile) {
+      padding: 46px 0 60px;
+      h2 {
+        font-size: 2em;
+      }
+      p {
+        font-size: 1.325em;
+      }
+    }
   }
 }
 
@@ -75,6 +81,12 @@
       color: #696969;
       font-weight: 100;
     }
+    @media all and (max-width: $mobile) {
+      padding: 20px 0 40px;
+      h2 {
+        font-size: 2em;
+      }
+    }
   }
 }
 
@@ -95,6 +107,11 @@
   input[type="text"] {
     margin: 0 auto 1.5em;
   }
+  @media all and (max-width: $mobile) {
+    .row {
+      padding: 40px 0px 20px;
+    }
+  }
 }
 
 #rsvp_form {
@@ -107,6 +124,9 @@
   form {
     max-width: 60%;
     margin: 0 auto -6em;
+    @media all and (max-width: $mobile) {
+      max-width: 90%;
+    }
     .input {
       width: 100%;
       display: block;
@@ -121,12 +141,20 @@
           clear: left;
           width: auto;
           margin-right: 3em;
+          @media all and (max-width: $mobile) {
+            width: 100%;
+            margin: 0 2em 0 0;
+          }
         }
         .radio {
           margin-top: 5px;
           display: inline-block;
           float: left;
           margin-left: 1em;
+          @media all and (max-width: $mobile) {
+            margin-left: 0;
+            margin-right: 1em;
+          }
           input[type="radio"] {
             margin-right: 1em;
             position: relative;
@@ -162,6 +190,9 @@
   .column {
     padding: 0;
     overflow: hidden;
+    @media all and (max-width: $mobile) {
+      width: 100%;
+    }
   }
   .map {
     width: 100%;
@@ -169,9 +200,25 @@
     position: relative;
     top: 25px;
     margin-top: -25px;
+    @media all and (max-width: $mobile) {
+      display: none;
+    }
+  }
+  .map-link {
+    display: none;
+    font-weight: 100;
+    font-size: 1em;
+    margin-top: 1.5em;
+    margin-bottom: 0;
+    @media all and (max-width: $mobile) {
+      display: block;
+    }
   }
   .details {
     padding: 120px 5% 125px 5%;
+    @media all and (max-width: $mobile) {
+      padding: 60px 5% 65px;
+    }
     address {
       font-size: 2em;
       font-style: normal;

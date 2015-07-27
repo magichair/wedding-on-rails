@@ -33,20 +33,24 @@ input[type="text"].cta {
   font-weight: 100;
   letter-spacing: 1px;
   text-align: center;
+  @media all and (max-width: $mobile) {
+    width: 300px;
+    font-size: 0.85em;
+  }
 }
 
 ::-webkit-input-placeholder {
-   color: $black;
+   color: #525252;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-  color: $black;
+  color: #525252;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-  color: $black;
+  color: #525252;
 }
 
 :-ms-input-placeholder {
-  color: $black;
+  color: #525252;
 }
