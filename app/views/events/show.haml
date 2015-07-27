@@ -21,16 +21,16 @@
 
 #location
   .row
-    -if flash[:notice].present?
-      %p= flash[:notice]
     .column.small-6.details
+      -if flash[:notice].present?
+        %p.notice= flash[:notice]
       %address
         The Ghullie Dhu,
         %br
         2 Rutland Square, Edinburgh
       %span.separator
       %p.times The ceremony will take place at 1:30, reception begins 7:30. See map for local hotels.
-      %p.map-link=link_to "View on map of venue", "https://www.google.co.uk/maps/place/Ghillie+Dhu/@55.9497634,-3.2078865,17z/data=!3m1!4b1!4m2!3m1!1s0x4887c7bd4b5617a3:0xb46bac236d74380e"
+      %p.map-link=link_to "View map of venue", "https://www.google.co.uk/maps/place/Ghillie+Dhu/@55.9497634,-3.2078865,17z/data=!3m1!4b1!4m2!3m1!1s0x4887c7bd4b5617a3:0xb46bac236d74380e"
     .column.small-6
       :plain
         <div class="map wpgmappity_container" id="wpgmappitymap"></div>

@@ -2,12 +2,12 @@
   -if flash[:notice].present?
     %p.notice= flash[:notice]
   -if @guest.partner_name.present?
-    = f.input :rsvp, :default => true, :label => "Can #{@guest.name} attend?", :as => :radio_buttons, :collection => {"Yes" => true,"No" => false}, :selected => @guest.rsvp
-    = f.input :partner_rsvp, :default => true, :label => "Can #{@guest.partner_name} attend?", :as => :radio_buttons, :collection => {"Yes" => true,"No" => false}, :selected => @guest.partner_rsvp
+    = f.input :rsvp, :default => true, :label => "Can #{@guest.name} attend?", :as => :radio_buttons, :collection => {"<span></span>Yes".html_safe => true,"<span></span>No".html_safe => false}, :selected => @guest.rsvp
+    = f.input :partner_rsvp, :default => true, :label => "Can #{@guest.partner_name} attend?", :as => :radio_buttons, :collection => {"<span></span>Yes".html_safe => true,"<span></span>No".html_safe => false}, :selected => @guest.partner_rsvp
   -else
-    = f.input :rsvp, :default => true, :label => "Can you attend?", :as => :radio_buttons, :collection => {"Yes" => true,"No" => false}, :selected => @guest.rsvp
+    = f.input :rsvp, :default => true, :label => "Can you attend?", :as => :radio_buttons, :collection => {"<span></span>Yes".html_safe => true,"<span></span>No".html_safe => false}, :selected => @guest.rsvp
   -if @guest.invited_to_ceremony
-    = f.input :vegetarian, :label => "Are you vegetarian?", :as => :radio_buttons
+    = f.input :vegetarian, :label => "Are you vegetarian?", :as => :radio_buttons, :collection => {"<span></span>Yes".html_safe => true,"<span></span>No".html_safe => false}
     = f.input :allergies, :label => "Any allergies?", :placeholder => "List any allergies yourself, your, partner or kids have"
   = f.input :music, :label => "Music suggestions", :placeholder => "Suggest any music you'd like to dance to at the reception"
   -if @guest.has_kids?
