@@ -26,7 +26,6 @@ Rails.application.routes.draw do
     root "admin#dashboard"
   end
 
-  match "/delayed_job" => DelayedJobWeb, :anchor => false, via: [:get, :post]
   root "events#show"
 
 end

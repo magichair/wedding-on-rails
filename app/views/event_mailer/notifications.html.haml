@@ -1,12 +1,31 @@
-- unless @rsvps.empty?
-  %h1 You have #{@rsvps.count} new #{"RSVP".pluralize(@rsvps.count)}
+- if @rsvp.present?
+  %h1 You have a new reply.
 
-  - @rsvps.each do |rsvp|
+  %p
+    %b
+      #{@rsvp.name}
+      RSVP'd
+    - if @rsvp.rsvp?
+      %b{style: "color: #27ae60;"} Yes
+    - else
+      %b{style: "color: #e74c3c;"} No
+
+  -if @rsvp.partner_name.present?
     %p
       %b
-        #{rsvp.guest.name}
-      RSVP'd
-      - if rsvp.guest.rsvp
+        #{@rsvp.partner_name}
+        RSVP'd
+      - if @rsvp.partner_rsvp?
         %b{style: "color: #27ae60;"} Yes
       - else
         %b{style: "color: #e74c3c;"} No
+
+  -if @rsvp.music.present?
+    %p
+      %b
+        Music suggestions
+      %br
+        #{@rsvp.music}
+
+  %p
+    =link_to "Login to your admin dashboard to see more", url_for(admin_root_url)

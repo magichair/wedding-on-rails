@@ -4,8 +4,7 @@ class GuestsController < ApplicationController
 
   def update
     @guest.update_attributes(guest_params)
-    EventNotification.find_or_create_by({notification_type: "rsvp", event_id: @guest.event.id, guest_id: @guest.id})
-    Event.delay(queue: "notification", run_at: notification_delay).send_notifications(@guest.event.id)
+    EventMailer.notifications(@guest).deliver
     if @guest.rsvp? || @guest.partner_rsvp?
       redirect_to event_path(@event, :anchor => "location"), :flash => { :notice => "Thanks for letting us know, we look forward to seeing you!" }
     else

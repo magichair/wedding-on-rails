@@ -1,9 +1,8 @@
 class Guest < ActiveRecord::Base
   belongs_to :event
   validates_presence_of :event
-  has_many :event_notifications
 
-  def self.ordered 
+  def self.ordered
     order("invited_to_ceremony = true DESC, id ASC")
   end
 
