@@ -1,14 +1,13 @@
 # Change database name, then run "rake db:create db:migrate"
 
 defaults: &defaults
-  encoding: utf-8
-  username: postgres
-  password: password
+  adapter: mysql2
+  encoding: utf8
+  username: tlils
+  password: 
   pool: 5
-  host: 127.0.0.1
-  port: 5433
+  host: localhost
   reconnect: true
-  adapter: postgresql
 
 development:
   <<: *defaults
@@ -20,3 +19,11 @@ test: &test
 
 cucumber:
   <<: *test
+
+production:
+ <<: *defaults
+ database: <%= ENV['RDS_DB_NAME'] %>
+ username: <%= ENV['RDS_USERNAME'] %>
+ password: <%= ENV['RDS_PASSWORD'] %>
+ host: <%= ENV['RDS_HOSTNAME'] %>
+ port: <%= ENV['RDS_PORT'] %>

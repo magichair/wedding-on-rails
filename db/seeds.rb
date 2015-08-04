@@ -1,14 +1,14 @@
 event = Event.create!({
-  date: Date.parse("2015-09-27"),
-  location: "Ghillie Dhu, Edinburgh",
+  date: Date.parse("2016-05-28"),
+  location: "Watertown, MA",
   active: true,
-  title: "Brains and Packhorse",
-  partner_one: "Helen",
-  partner_two: "Kyle",
-  venue_name: "Ghillie Dhu",
-  venue_address_line_one: "2 Rutland Square",
-  venue_address_city: "Edinburgh",
-  venue_address_state: "Scotland",
-  venue_address_zip: "EH1 2AD",
-  venue_address_country: "United Kingdom"
+  title: "Uy -- Ibsen",
+  partner_one: "Elaine",
+  partner_two: "John",
+  venue_name: "The Commander's Mansion",
+  venue_address_line_one: "440 Talcott Ave",
+  venue_address_city: "Watertown",
+  venue_address_state: "Massachusetts",
+  venue_address_zip: "02472",
+  venue_address_country: "United States of America"
 })

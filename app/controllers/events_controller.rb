@@ -15,7 +15,7 @@ class EventsController < ApplicationController
     names = params[:search][:query].downcase.split(" ")
     if names.count > 0
       names = names.map{ |name| name.strip }.join('|')
-      @guest = Guest.where("lower(name) SIMILAR TO ? AND (lower(partner_name) SIMILAR TO ? OR (partner_name IS NULL OR partner_name = ''))","(#{names})%","%(#{names})%").order(:partner_name)
+      @guest = Guest.where("lower(name) LIKE ? AND (lower(partner_name) LIKE ? OR (partner_name IS NULL OR partner_name = ''))","(#{names})%","%(#{names})%").order(:partner_name)
       if @guest.any?
         redirect_to rsvp_event_guest_path(@event,@guest.first) and return
       end

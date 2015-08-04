@@ -1,31 +1,33 @@
 header#site {
   @media all and (max-width: $mobile) {
     .row {
-      padding-top: 20px;
-      padding-bottom: 20px;
+      padding-top: 10px;
+      padding-bottom: 10px;
     }
   }
   h1 {
+    font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+    font-style: normal;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: image-url("title.png");
-    width: 350px;
-    height: 249px;
-    padding-top: 2.125em;
+    //background-image: image-url("title.png");
+    //width: 350px;
+    min-height: 40px;
+    //padding-top: 2.125em;
     text-align: center;
     display: block;
     margin: 0 auto;
-    color: $black;
-    text-transform: uppercase;
+    color: $white;
+    //text-transform: uppercase;
     font-size: 2.25em;
     line-height: 1.4;
-    font-weight: 400;
+    font-weight: 200;
     letter-spacing: 2px;
     @media all and (max-width: $mobile) {
-      width: 280px;
+      //width: 280px;
       background-size: 100%;
       font-size: 1.75em;
-      padding-top: 3.125em;
+      //padding-top: 3.125em;
     }
   }
 }

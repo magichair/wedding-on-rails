@@ -8,9 +8,16 @@
 @import "layout/core";
 
 .box--orange {
-  background: $orange;
+  background: $brown;
   h1, h2 {
     color: $white;
+  }
+}
+
+.box--plum-light {
+  background: $plum-light;
+  h1, h2 {
+    color: $black;
   }
 }
 
@@ -20,7 +27,7 @@
 
 #event--cover {
   .row {
-    padding: 76px 0 110px;
+    padding: 45px 0 45px;
     position: relative;
     h2 {
       margin: 0;
@@ -33,7 +40,7 @@
     span.separator {
       width: 15%;
       display: block;
-      border-bottom: 3px solid $orange;
+      border-bottom: 3px solid $brown-light;
       margin: 0 auto;
     }
     p {
@@ -51,7 +58,7 @@
       color: #696969;
     }
     @media all and (max-width: $mobile) {
-      padding: 46px 0 60px;
+      padding: 45px 0 45px;
       h2 {
         font-size: 2em;
       }
@@ -186,6 +193,8 @@
   .row {
     max-width: 100%;
     padding: 0;
+    border-top: 15px solid $plum;
+    border-bottom: 15px solid $plum;
   }
   .column {
     padding: 0;
@@ -215,7 +224,7 @@
     }
   }
   .details {
-    padding: 120px 5% 125px 5%;
+    padding: 120px 5% 20px 5%;
     position: relative;
     @media all and (max-width: $mobile) {
       padding: 60px 5% 65px;
@@ -229,7 +238,7 @@
     span.separator {
       width: 15%;
       display: block;
-      border-bottom: 2px solid $orange;
+      border-bottom: 2px solid $brown-light;
       margin: 40px auto;
     }
     .times {
@@ -239,7 +248,7 @@
     }
     .notice {
       color: $white;
-      background: $orange;
+      background: $brown;
       padding: 1em 0;
       font-weight: 100;
       position: absolute;
@@ -249,7 +258,7 @@
       text-align: center;
       @media all and (max-width: $mobile) {
         background: none;
-        color: $orange;
+        color: $brown;
         position: relative;
         padding: 0 0 1em;
       }

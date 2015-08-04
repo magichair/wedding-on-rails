@@ -5,15 +5,15 @@ footer.card {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
   color: $color-text;
-  a { color: $orange; }
+  a { color: $brown; }
   p {
     margin: 0;
   }
 }
 
 footer#site {
-  min-height: 360px;
-  background-image: image-url("penguin.png");
-  background-repeat: no-repeat;
-  background-position: center;
+  // min-height: 360px;
+  // background-image: image-url("penguin.png");
+  // background-repeat: no-repeat;
+  // background-position: center;
 }

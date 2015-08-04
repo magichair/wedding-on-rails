@@ -10,27 +10,26 @@
       %span.separator
       %p= @event.formatted_time
 
-.box--orange#rsvp
-  .row
-    .column.small-12
-      -if flash[:error].present?
-        %p.notice= flash[:error]
-      = simple_form_for :search, url: [:search, @event] do |f|
-        = f.input :query, placeholder: "Enter the name on your invite to RSVP", :label => false, :input_html => { :class => "cta" }
-        = f.button :submit, :class => "button", :value => "Find your invite"
+/ .box--orange#rsvp
+/   .row
+/     .column.small-12
+/       -if flash[:error].present?
+/         %p.notice= flash[:error]
+/       = simple_form_for :search, url: [:search, @event] do |f|
+/         = f.input :query, placeholder: "Enter the name on your invite to RSVP", :label => false, :input_html => { :class => "cta" }
+/         = f.button :submit, :class => "button", :value => "Find your invite"
 
 #location
   .row
     .column.small-6.details
       -if flash[:notice].present?
         %p.notice= flash[:notice]
-      %address
-        The Ghullie Dhu,
-        %br
-        2 Rutland Square, Edinburgh
+      %address= @event.venue_name
+      %address= @event.venue_address_line_one
+      %address= "#{@event.venue_address_city + ', ' + @event.venue_address_state}"
       %span.separator
-      %p.times The ceremony will take place at 1:30, reception begins 7:30. See map for local hotels.
-      %p.map-link=link_to "View map of venue", "https://www.google.co.uk/maps/place/Ghillie+Dhu/@55.9497634,-3.2078865,17z/data=!3m1!4b1!4m2!3m1!1s0x4887c7bd4b5617a3:0xb46bac236d74380e"
+      %p.times More details to come soon!
+      %p.map-link=link_to "View map of venue", "https://www.google.com/maps/place/Town+of+Watertown:+Commanders+Mansion/@42.360647,-71.1631341,15z/data=!4m2!3m1!1s0x0:0x1288b8c1923bd714!6m1!1e1"
     .column.small-6
       :plain
         <div class="map wpgmappity_container" id="wpgmappitymap"></div>

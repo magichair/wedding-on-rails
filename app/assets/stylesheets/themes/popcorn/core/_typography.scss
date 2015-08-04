@@ -61,15 +61,15 @@ p {
   }
 }
 
-a {
-  color: $orange;
-}
+// a {
+//   color: $orange;
+// }
 
 input, button {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
 }
 
-a:hover, a:active, a:focus { color: $orange; opacity: 0.7; }
+// a:hover, a:active, a:focus { color: $orange; opacity: 0.7; }
 
 @media all and (max-width: 600px) {
   h2 {
