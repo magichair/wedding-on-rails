@@ -3,7 +3,7 @@
 ## Installing
 
 ```
-$ git clone git@github.com:andrewsprinz/wedding-on-rails.git
+$ git clone git@github.com:magichair/wedding-on-rails.git
 $ cd wedding-on-rails
 $ bundle install
 $ rake db:create
